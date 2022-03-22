@@ -24,3 +24,28 @@ Vagrant.configure("2") do |config|
     # Provision Script
     fileserver.vm.provision "shell", path: "provision/serverdeployment.sh"
   end
+
+    # Client VM
+  config.vm.define "ubuntuclient" do |client|
+    client.vm.hostname = "ubuntuclient"
+    client.vm.box = "generic/ubuntu1804"
+
+    # Network Configs
+    client.vm.network "private_network", ip: "192.168.1.50"
+
+    # VM Configs
+    client.vm.provider "virtualbox" do |vb|
+      vb.gui = false
+      vb.name = "Client"
+      
+      # VM Specs
+      vb.memory = "4096"
+      vb.cpus = "4"
+      vb.customize ["modifyvm", :id, "--vram", "128"]
+    end
+
+    # Provision Script
+    client.vm.provision "shell", path: "provision/clientdeployment.sh"
+  end
+
+end
