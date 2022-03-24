@@ -41,6 +41,7 @@ Im Vagrant file erstellen wir die VMs und geben die Spezifikationen durch. Folge
 | Netzwerkkarte Client| 192.168.10.10 |
 
 
+VM1
 ```ruby
 Vagrant.configure("2") do |config|
 
@@ -64,5 +65,34 @@ Vagrant.configure("2") do |config|
 
     # Provision Script
     fileserver.vm.provision "shell", path: "provision/serverdeployment.sh"
+  end
+```
+VM2
+
+```ruby
+  # Client VM
+  config.vm.define "ubuntuclient" do |client|
+    client.vm.hostname = "ubuntuclient"
+    client.vm.box = "generic/ubuntu1804"
+
+    # Network Configs
+    client.vm.network "private_network", ip: "192.168.10.10"
+
+    # VM Configs
+    client.vm.provider "virtualbox" do |vb|
+      vb.gui = false
+      vb.name = "LB-Client"
+      
+      # VM Specs
+      vb.memory = "4096"
+      vb.cpus = "4"
+      vb.customize ["modifyvm", :id, "--vram", "128"]
+    end
+
+    # Provision Script
+    client.vm.provision "shell", path: "provision/clientdeployment.sh"
+  end
+
+end
   end
 ```
