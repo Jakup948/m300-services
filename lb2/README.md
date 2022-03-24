@@ -23,7 +23,7 @@
 <div id='Umgebung'/>
 
 # Umgebung
-![M300-Banner](umgebung.png)
+![M300-Banner](Foto/umgebung.png)
 
 
 <div id='Erklärung'/>
