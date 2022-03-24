@@ -13,21 +13,33 @@
  4. [Quellenagabe](#quellenangabe)
 
 
-<div id='Umgebung'/>
-
-# Umgebung
-![M300-Banner](umgebung.png)
-
-
 
 
 <div id='Einleitung'/>
 
 # Einleitung
 
+
+<div id='Umgebung'/>
+
+# Umgebung
+![M300-Banner](umgebung.png)
+
+
 <div id='Erklärung'/>
 
 # Erklärung Code
+
+
+Im Vagrant file erstellen wir die VMs und geben die Spezifikationen durch. Folgende sachen werden an hier angegeben  VM Configs / Network Configs 
+
+| Hardware   |      Konfiguration     |
+|:----------|:-------------|
+| CPU |  2x Core|
+| RAM |    2048  |
+| Netzwerkkarte fileserver| 192.168.10.5 |
+| Netzwerkkarte Client| 192.168.10.10 |
+
 
 ```ruby
 Vagrant.configure("2") do |config|
