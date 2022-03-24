@@ -76,6 +76,7 @@ Vagrant.configure("2") do |config|
 ```
 VM2
 
+
 ```ruby
   # Client VM
   config.vm.define "ubuntuclient" do |client|
