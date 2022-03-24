@@ -37,8 +37,8 @@ Im Vagrant file erstellen wir die VMs und geben die Spezifikationen durch. Folge
 |:----------|:-------------|
 | CPU |  2x Core|
 | RAM |    2048  |
-| Netzwerkkarte fileserver| 192.168.10.5 |
-| Netzwerkkarte Client| 192.168.10.10 |
+| Netzwerkkarte fileserver| 192.168.1.48|
+| Netzwerkkarte Client| 192.168.1.50 |
 
 
 VM1
