@@ -1,4 +1,4 @@
-![M300-Banner](info.png)
+![M300-Banner](Foto/info.png)
 
 
 # Inahltsverzeichnis
