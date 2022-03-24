@@ -23,7 +23,7 @@
 <div id='Umgebung'/>
 
 # Umgebung
-![M300-Banner](Foto/umgebung.png)
+![M300-umgebung](Foto/umgebung.png)
 
 
 <div id='Erklärung'/>
@@ -101,3 +101,75 @@ end
 <div id='Testing'/>
 
 # Testing
+
+
+### Befehl-Tabelle Vagrant:
+
+|Befehl    |Command (im Terminal)                    |
+|-------------------------|--------------------------|
+|hochfahren / erstellen   |`vagrant up`              |
+|herunterfahren           |`vagrant halt`            |
+|löschen                  |`vagrant destroy`         |
+
+![M300-Banner](Foto/vagrant.png)
+
+
+![M300-Banner](Foto/virtualbox.png)
+
+<a name="via-ssh-auf-die-vms-zugreifen"></a> 
+## Via SSH auf die VMs zugreifen:
+
+Um auf die einzelnen VMs zuzugreifen, muss man lediglich im Terminal im **gleichen Ordner wie das Vagrantfile** sein und den Befehl **vagrant ssh "Maschine"** eingeben.
+
+|Welche Maschine  |Command (im Terminal)              |
+|-----------------|-----------------------------------|
+|Fileserver       |`vagrant ssh ubuntuserver`         |
+|Client           |`vagrant ssh ubuntuclient`         |
+
+<a name="benutzernamen-und-passwoerter"></a>
+## Benutzernamen und Passwörter
+
+<a name="ssh"></a>
+### SSH
+
+Auf dem LB-Fileserver sowie auf dem LB-Client sind die SSH User Vagrant.
+- Benutzername: vagrant
+- Passwort: vagrant
+
+<a name="samba"></a>
+### SAMBA
+
+Um auf den privaten Samba Share zugreifen zu können, braucht es einen privaten Benutzer: "lb-user"
+- Benutzername: lb-user
+- Passwort: password 
+
+<a name="zugreifen-auf-den-privaten-share"></a>
+## Zugreifen auf den privaten Share
+
+Zugreifen auf den Samba Share via Ubuntuclient Terminal:
+
+|welcher Share    |Command (im Terminal)                                    |
+|-----------------|---------------------------------------------------------|
+|privaten Share   |`smbclient //192.168.1.48/lb-user -U lb-user`              |
+|public Share     |`smbclient //192.168.1.48/public`                        |
+|Allgemein        |`smbclient //*IP Adresse*/*Ordner* -U *Benutzername*`    |
+
+![M300-Banner](Foto/privat.png)
+
+![M300-Banner](Foto/public.png)
+
+## Ordner erstellen und anzeigen
+Wenn wir Zugriff auf die Shares haben, können wir nun darauf Dateien und Ordner erstellen.
+
+<a name="exit"></a>
+## Exit
+
+### Aus Sambashare
+
+Um den Share zu verlassen, in welchen man sich eingeloggt hat, muss man nur einen Befehl eingeben:
+> exit
+
+### Aus SSH
+
+Um die SSH Verbindung (im Terminal von z.B. Visual Studio Code,...) zu trennen, muss man lediglich einen Befehl eingeben:
+> exit
