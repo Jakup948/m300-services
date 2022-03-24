@@ -111,9 +111,10 @@ end
 |herunterfahren           |`vagrant halt`            |
 |löschen                  |`vagrant destroy`         |
 
+Ausführung Vagrant UP
 ![M300-Banner](Foto/vagrant.png)
 
-
+überprüfung erstellte VMs auf Virtualbox
 ![M300-Banner](Foto/virtualbox.png)
 
 <a name="via-ssh-auf-die-vms-zugreifen"></a> 
@@ -154,8 +155,11 @@ Zugreifen auf den Samba Share via Ubuntuclient Terminal:
 |public Share     |`smbclient //192.168.1.48/public`                        |
 |Allgemein        |`smbclient //*IP Adresse*/*Ordner* -U *Benutzername*`    |
 
+Testing vom Private Share
 ![M300-Banner](Foto/privat.png)
 
+
+Testing vom Public Share
 ![M300-Banner](Foto/public.png)
 
 ## Ordner erstellen und anzeigen
