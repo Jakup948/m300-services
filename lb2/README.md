@@ -109,8 +109,6 @@ end
 
 # Testing
 
-<a name="umgebung-steuern"></a>
-## Umgebung steuern
 
 <a name="hochfahren"></a>
 ### Hochfahren:
