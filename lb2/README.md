@@ -18,13 +18,20 @@
 <div id='Einleitung'/>
 
 # Einleitung
-
+In diesem LB2 von Modul 300 (Integration von plattformübergreifenden Diensten in das Netzwerk) werfen wir einen Blick auf Vagrant. Wir verwenden Markdown, um Dokumentation zu schreiben. Das Ziel von LB2 ist es, mit Vagrant eine Dienstfunktion mit mehreren VMs oder Diensten aufzubauen. In unserem Fall richten wir zwei VMs ein. Der Servercomputer des SMB-Dateiservers und die Clients, die darauf zugreifen können. Dieser Dienst ermöglicht es Geräten innerhalb des Netzwerks, auf freigegebene Dateien zuzugreifen und Berechtigungen für Ordner/Dateien zu steuern.
 
 <div id='Umgebung'/>
 
 # Umgebung
 ![M300-umgebung](Foto/umgebung.png)
 
+### Shares
+- **LB-User Share:**
+Nur der Benutzer lb-user kann auf diese Freigabe zugreifen. Dazu benötigen Sie ihren Benutzernamen und ihr Passwort, während allen anderen der Zugriff verweigert wird. In dieser Freigabe kann nur der lb-Benutzer Dateien erstellen und löschen und hat vollen Zugriff auf die Freigabe.
+> **Hinweis:** Benutzername und Passwort werden bereitgestellt
+
+- **Public Share:**
+Jeder kann auf diese Freigabe zugreifen. Hier ist kein Konto erforderlich, jeder hat das Recht, Dateien und Ordner in dieser Freigabe zu löschen
 
 <div id='Erklärung'/>
 
@@ -102,6 +109,26 @@ end
 
 # Testing
 
+<a name="umgebung-steuern"></a>
+## Umgebung steuern
+
+<a name="hochfahren"></a>
+### Hochfahren:
+
+Um die Umgebung hoch zufahren, muss man im Terminal im **gleichen Ordner wie das Vagrantfile** sein und **vagrant up** eingeben. Dies dauert eine Weile, da es die Nötigen Daten herunterladet und die VMs erstellt und konfiguriert.
+
+<a name="herunterfahren"></a>
+### Herunterfahren:
+
+Wenn man nun die Umgebung herunterfahren möchte, muss man im Terminal im **gleichen Ordner wie das Vagrantfile** sein und **vagrant halt** eingeben.
+
+<a name="umgebung-löschen"></a>
+### Umgebung vom Gerät löschen:
+
+Um die Umgebung vom Gerät nun zu löschen, muss man im Terminal im **gleichen Ordner wie das Vagrantfile** sein und den Befehl **vagrant destroy** eingeben. 
+> **NOTE:** Man muss bei den Maschinen die beide Male **"y"** eingeben, um zu bestätigen, dass man die VMs auch wirklich löschen will.
+
+<a name="befehl-tabelle-vagrant"></a>
 
 ### Befehl-Tabelle Vagrant:
 
